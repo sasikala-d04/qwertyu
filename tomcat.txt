@@ -1,0 +1,28 @@
+[ec2-user@ip-172-31-4-149 ~]$ sudo su -
+[root@ip-172-31-4-149 ~]# sudo yum install java-17-amazon-corretto-devel
+[root@ip-172-31-4-149 ~]# cd /opt
+[root@ip-172-31-4-149 opt]# ll
+[root@ip-172-31-4-149 opt]# wget https://dlcdn.apache.org/tomcat/tomcat-9/v9.0.84/bin/apache-tomcat-9.0.84.tar.gz
+[root@ip-172-31-4-149 opt]# ll
+[root@ip-172-31-4-149 opt]# tar -xzvf apache-tomcat-9.0.84.tar.gz
+[root@ip-172-31-4-149 opt]# ll
+[root@ip-172-31-4-149 opt]# mv apache-tomcat-9.0.84 tomcat
+[root@ip-172-31-4-149 opt]# ll
+[root@ip-172-31-4-149 opt]# cd tomcat
+[root@ip-172-31-4-149 tomcat]# ll
+[root@ip-172-31-4-149 tomcat]# cd bin
+[root@ip-172-31-4-149 bin]# ll
+[root@ip-172-31-4-149 bin]# ./startup.sh
+[root@ip-172-31-4-149 bin]# ll
+[root@ip-172-31-4-149 bin]# find / -name context.xml
+[root@ip-172-31-4-149 bin]# vi /opt/tomcat/webapps/host-manager/META-INF/context.xml
+[root@ip-172-31-4-149 bin]# vi /opt/tomcat/webapps/manager/META-INF/context.xml
+[root@ip-172-31-4-149 bin]# cd ..
+[root@ip-172-31-4-149 tomcat]# cd conf
+[root@ip-172-31-4-149 conf]# ll -a
+[root@ip-172-31-4-149 conf]# vi tomcat-users.xml
+[root@ip-172-31-4-149 conf]# cd ..
+[root@ip-172-31-4-149 tomcat]# cd bin
+[root@ip-172-31-4-149 bin]# ll
+[root@ip-172-31-4-149 bin]# ./shutdown.sh
+[root@ip-172-31-4-149 bin]# ./startup.sh
